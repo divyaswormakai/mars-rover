@@ -1,0 +1,91 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LogPosition test suite Should match snapshot 1`] = `
+.c1 {
+  cursor: pointer;
+}
+
+.c0 {
+  display: inline-block;
+  height: 376px;
+  overflow: hidden;
+  border: 1px solid black;
+  margin-left: 30px;
+  padding: 20px 20px;
+  width: 200px;
+}
+
+.c0 .current {
+  display: block;
+  margin: 0 0 5px;
+}
+
+.c0 .direction {
+  margin: 20px 0 18px;
+}
+
+.c0 .delete-button {
+  float: right;
+  margin-right: 30px;
+}
+
+.c0 .title {
+  margin: 23px 0 0 0;
+}
+
+.c0 .positions-container {
+  height: 225px;
+  overflow: auto;
+}
+
+<div>
+  <div
+    class="c0"
+  >
+    <div>
+      <span
+        class="current"
+      >
+        Current position:
+      </span>
+      <b>
+        X 
+        2
+        , Y 
+        2
+      </b>
+    </div>
+    <p
+      class="direction"
+    >
+      Current direction: 
+      <b>
+        east
+      </b>
+    </p>
+    <button
+      class="c1"
+    >
+      Clear Log
+    </button>
+    <h5
+      class="title"
+    >
+      Last positions: 
+    </h5>
+    <div
+      class="positions-container"
+    >
+      <p>
+        Obstacle - X 0, Y 3
+      </p>
+      <p>
+        X 0, Y 1
+      </p>
+      <p>
+        X 0, Y 0
+      </p>
+    </div>
+  </div>
+</div>
+`;
