@@ -34,7 +34,7 @@ describe('Reducer src/reducers/rover.js: ', () => {
 
     it('ROVER_CLEAR_POSITION_LOG', () => {
       const action = { type: ROVER_CLEAR_POSITION_LOG };
-      const initialState = { ...defaultState, log: [{ x: 1, y: 1 }] };
+      const initialState = { ...defaultState, log: [] };
 
       expect(reducer(initialState, action)).toEqual(defaultState);
     });
@@ -74,7 +74,7 @@ describe('Reducer src/reducers/rover.js: ', () => {
         const expectedState = {
           ...defaultState,
           current: expectedPosition,
-          log: ['Obstacle - X 0, Y 2', 'Obstacle - X 0, Y 2', position],
+          log: ['Obstacle - X0, Y2', 'Obstacle - X0, Y2', position],
         };
 
         expect(reducer(initialState, action)).toEqual(expectedState);
@@ -128,7 +128,7 @@ describe('Reducer src/reducers/rover.js: ', () => {
         const initialState = { ...defaultState, current: position };
         const expectedState = {
           ...initialState,
-          log: ['Obstacle - X 0, Y 1'],
+          log: ['Obstacle - X0, Y1'],
         };
 
         expect(reducer(initialState, action)).toEqual(expectedState);

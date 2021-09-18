@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/8</span>
+                <span class='fraction'>8/8</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/3</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/3</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/7</span>
+                <span class='fraction'>7/7</span>
             </div>
         
             
@@ -55,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -80,40 +80,40 @@
 <a name='L21'></a><a href='#L21'>21</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react';
 import styled from 'styled-components';
 &nbsp;
-const Input = <span class="cstat-no" title="statement not covered" >React.forwardRef(<span class="fstat-no" title="function not covered" >(p</span>rops, ref) =&gt; <span class="cstat-no" title="statement not covered" >&lt;input {...props} ref={ref} /&gt;)</span></span>
+const Input = React.forwardRef((props, ref) =&gt; &lt;input {...props} ref={ref} /&gt;)
 &nbsp;
-const getStylesBasedOnType = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >ty</span>pe =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >  switch (type) {</span>
+const getStylesBasedOnType = type =&gt; {
+  switch (type) {
     case 'submit':
     case 'reset':
-<span class="cstat-no" title="statement not covered" >      return 'cursor: pointer;';</span>
+      return 'cursor: pointer;';
     default:
-<span class="cstat-no" title="statement not covered" >      return '';</span>
+      return '';
   }
 };
 &nbsp;
-const StyledInput = <span class="cstat-no" title="statement not covered" >styled(Input)`</span>
-  ${<span class="fstat-no" title="function not covered" >({</span> type }) =&gt; <span class="cstat-no" title="statement not covered" >getStylesBasedOnType(type)}</span>
+const StyledInput = styled(Input)`
+  ${({ type }) =&gt; getStylesBasedOnType(type)}
 `;
 &nbsp;
 export default StyledInput;
@@ -124,7 +124,7 @@ export default StyledInput;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Sat Sep 18 2021 14:21:21 GMT+0545 (Nepal Time)
+                at Sun Sep 19 2021 01:34:51 GMT+0545 (Nepal Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>

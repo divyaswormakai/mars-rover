@@ -4,7 +4,6 @@ import { Provider } from 'react-redux';
 import { fireEvent, render } from '@testing-library/react';
 import 'jest-styled-components';
 
-import { roverClearPositionLog } from '../../actions/roverActions';
 import { getRover } from '../../reducers';
 
 import LogPosition from '../LogPosition';
@@ -24,12 +23,6 @@ describe('LogPosition test suite', () => {
 
   const setup = () => render(component);
 
-  beforeEach(() => {
-    roverClearPositionLog.mockReturnValue({
-      type: 'roverClearPositionLog',
-    });
-    getRover.mockReturnValue(state.rover);
-  });
 
   afterEach(jest.clearAllMocks);
 
@@ -44,10 +37,5 @@ describe('LogPosition test suite', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('Should fire roverClearPositionLog action', () => {
-    const { getByText } = setup();
-    fireEvent.click(getByText('Clear Log'));
 
-    expect(roverClearPositionLog).toHaveBeenCalledTimes(1);
-  });
 });

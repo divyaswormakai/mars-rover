@@ -1,22 +1,16 @@
+import 'jest-styled-components';
+
+import { fireEvent, render } from '@testing-library/react';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { fireEvent, render } from '@testing-library/react';
-import 'jest-styled-components';
 
-import {
-  roverClear,
-  roverNewKeyboardMove,
-  roverSetPosition,
-} from '../../actions/roverActions';
 import { createObstacles } from '../../actions/obstaclesActions';
-import { getGrid, getObstacles } from '../../reducers';
-
-import { mockComponent } from '../../common/testHelpers';
+import { roverClear, roverNewKeyboardMove, roverSetPosition } from '../../actions/roverActions';
 import { KEYBOARDS_CODES } from '../../common/constants';
-
+import { mockComponent } from '../../common/testHelpers';
+import { getGrid, getObstacles } from '../../reducers';
 import store from '../../store/__mocks__/mockStore';
-
 import Home from '../Home';
 
 jest.mock('../../actions/roverActions');
@@ -25,9 +19,6 @@ jest.mock('../../reducers/index');
 
 jest.mock('../../components/Actions', () => props =>
   mockComponent('Actions', props)
-);
-jest.mock('../../components/Description', () => props =>
-  mockComponent('Description', props)
 );
 jest.mock('../../components/Grid', () => props => mockComponent('Grid', props));
 jest.mock('../../components/LogPosition', () => props =>

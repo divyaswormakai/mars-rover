@@ -3,7 +3,6 @@
 exports[`Actions test suite Should match snapshot 1`] = `
 .c0 {
   display: inline-block;
-  height: 376px;
   overflow: hidden;
   border: 1px solid black;
   padding: 20px;
@@ -24,11 +23,6 @@ exports[`Actions test suite Should match snapshot 1`] = `
     <code
       aria-label="InstructionsForm"
       name="InstructionsForm"
-      props="[object Object]"
-    />
-    <code
-      aria-label="LogObstacles"
-      name="LogObstacles"
       props="[object Object]"
     />
   </div>

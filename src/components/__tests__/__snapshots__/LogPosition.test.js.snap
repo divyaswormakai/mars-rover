@@ -77,13 +77,13 @@ exports[`LogPosition test suite Should match snapshot 1`] = `
       class="positions-container"
     >
       <p>
-        Obstacle - X 0, Y 3
+        Obstacle - X0, Y3
       </p>
       <p>
-        X 0, Y 1
+        X0, Y1
       </p>
       <p>
-        X 0, Y 0
+        X0, Y0
       </p>
     </div>
   </div>

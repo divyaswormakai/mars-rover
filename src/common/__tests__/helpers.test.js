@@ -2,7 +2,6 @@ import React from 'react';
 
 import {
   getDirectionArrow,
-  getNewObstaclesCoordinates,
   getRandomCoordinates,
   getRandomRoverPosition,
   getRoverMovementFromCode,
@@ -43,37 +42,7 @@ describe('helpers', () => {
     });
   });
 
-  describe('getNewObstaclesCoordinates', () => {
-    it('should return obstacles coordinates', () => {
-      jest.spyOn(global.Math, 'floor').mockReturnValueOnce(2);
-      jest.spyOn(global.Math, 'floor').mockReturnValueOnce(2);
-      const roverPosition = { x: 0, y: 0 };
-      const obstaclesCoordinates = [{ x: 1, y: 1 }];
-      const newObstaclesCoordinates = getNewObstaclesCoordinates(
-        grid,
-        roverPosition,
-        obstaclesCoordinates
-      );
-      const expectedCoordinates = [{ x: 2, y: 2 }];
-
-      expect(newObstaclesCoordinates).toEqual(expectedCoordinates);
-    });
-
-    it('should enter 2 times', () => {
-      jest.spyOn(global.Math, 'floor').mockReturnValueOnce(2);
-      jest.spyOn(global.Math, 'floor').mockReturnValueOnce(2);
-      const roverPosition = { x: 2, y: 2 };
-      const obstaclesCoordinates = [{ x: 1, y: 1 }];
-      const newObstaclesCoordinates = getNewObstaclesCoordinates(
-        grid,
-        roverPosition,
-        obstaclesCoordinates
-      );
-      const expectedCoordinates = [{ x: 0, y: 0 }];
-
-      expect(newObstaclesCoordinates).toEqual(expectedCoordinates);
-    });
-  });
+ 
 
   describe('getRandomCoordinates', () => {
     it('should return obstacles coordinates', () => {

@@ -1,29 +1,10 @@
-import {
-  ROVER_CLEAR,
-  ROVER_CLEAR_POSITION_LOG,
-  ROVER_NEW_INSTRUCTIONS,
-  ROVER_NEW_MOVE,
-  ROVER_SET_POSITION,
-} from '../actionTypes';
-import {
-  roverClear,
-  roverClearPositionLog,
-  roverNewInstructionsMove,
-  roverNewKeyboardMove,
-  roverSetPosition,
-} from '../roverActions';
+import { ROVER_CLEAR, ROVER_NEW_INSTRUCTIONS, ROVER_NEW_MOVE, ROVER_SET_POSITION } from '../actionTypes';
+import { roverClear, roverNewInstructionsMove, roverNewKeyboardMove, roverSetPosition } from '../roverActions';
 
 describe('Actions src/actions/obstaclesActions.js', () => {
   it('roverClear', () => {
     const expected = { type: ROVER_CLEAR };
     const actual = roverClear();
-
-    expect(actual).toEqual(expected);
-  });
-
-  it('roverClearPositionLog', () => {
-    const expected = { type: ROVER_CLEAR_POSITION_LOG };
-    const actual = roverClearPositionLog();
 
     expect(actual).toEqual(expected);
   });

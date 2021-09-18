@@ -8,6 +8,54 @@ exports[`Home test suite Should match snapshot 1`] = `
 
 .c0 .main-container {
   margin-top: 20px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: space-around;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: space-around;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.c0 .main-container-text {
+  width: 50%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+@media (max-width:900px) {
+  .c0 {
+    padding: 25px;
+  }
+
+  .c0 .main-container {
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+
+  .c0 .main-container-text {
+    width: 100%;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
 }
 
 <div>
@@ -21,13 +69,6 @@ exports[`Home test suite Should match snapshot 1`] = `
         props="[object Object]"
       />
     </header>
-    <section>
-      <code
-        aria-label="Description"
-        name="Description"
-        props="[object Object]"
-      />
-    </section>
     <main
       class="main-container"
     >
@@ -36,16 +77,20 @@ exports[`Home test suite Should match snapshot 1`] = `
         name="Grid"
         props="[object Object]"
       />
-      <code
-        aria-label="LogPosition"
-        name="LogPosition"
-        props="[object Object]"
-      />
-      <code
-        aria-label="Actions"
-        name="Actions"
-        props="[object Object]"
-      />
+      <div
+        class="main-container-text"
+      >
+        <code
+          aria-label="Actions"
+          name="Actions"
+          props="[object Object]"
+        />
+        <code
+          aria-label="LogPosition"
+          name="LogPosition"
+          props="[object Object]"
+        />
+      </div>
     </main>
   </div>
 </div>

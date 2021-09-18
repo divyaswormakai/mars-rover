@@ -16,11 +16,9 @@ exports[`Grid test suite Should match snapshot 1`] = `
   border-top: 1px solid #24292e;
   border-right: 1px solid #24292e;
   display: inline-block;
-  height: 3rem;
-  max-width: 25px;
-  max-height: 25px;
+  height: 2rem;
   position: relative;
-  width: 3rem;
+  width: 2rem;
 }
 
 .c0 .grid-rows .grid-square:first-child {
@@ -28,7 +26,7 @@ exports[`Grid test suite Should match snapshot 1`] = `
 }
 
 .c0 .grid-rows .grid-square-obstacle {
-  background-color: #24292e;
+  background-color: #fd335a;
 }
 
 .c0 .grid-rows .grid-square-rover {
@@ -42,7 +40,7 @@ exports[`Grid test suite Should match snapshot 1`] = `
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   color: white;
 }
 

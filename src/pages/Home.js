@@ -59,8 +59,8 @@ const Home = ({
       <main className="main-container">
         <Grid />
         <div className="main-container-text">
-          <LogPosition />
           <Actions />
+          <LogPosition />
         </div>
       </main>
     </div>

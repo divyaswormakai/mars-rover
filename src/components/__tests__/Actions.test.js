@@ -11,9 +11,6 @@ jest.mock('../InstructionsForm', () => props =>
   mockComponent('InstructionsForm', props)
 );
 
-jest.mock('../LogObstacles', () => props =>
-  mockComponent('LogObstacles', props)
-);
 
 describe('Actions test suite', () => {
   const component = <Actions />;
