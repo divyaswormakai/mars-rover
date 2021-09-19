@@ -1,7 +1,7 @@
 import { ROVER_CLEAR, ROVER_NEW_INSTRUCTIONS, ROVER_NEW_MOVE, ROVER_SET_POSITION } from '../actionTypes';
 import { roverClear, roverNewInstructionsMove, roverNewKeyboardMove, roverSetPosition } from '../roverActions';
 
-describe('Actions src/actions/obstaclesActions.js', () => {
+describe('Actions src/actions/roverActions', () => {
   it('roverClear', () => {
     const expected = { type: ROVER_CLEAR };
     const actual = roverClear();
@@ -12,15 +12,13 @@ describe('Actions src/actions/obstaclesActions.js', () => {
   it('roverNewInstructionsMove', () => {
     const instructions = 'instructions';
     const grid = 'grid';
-    const obstaclesCoordinates = 'obstaclesCoordinates';
     const expected = {
       type: ROVER_NEW_INSTRUCTIONS,
-      payload: { instructions, grid, obstaclesCoordinates },
+      payload: { instructions, grid },
     };
     const actual = roverNewInstructionsMove({
       instructions,
       grid,
-      obstaclesCoordinates,
     });
 
     expect(actual).toEqual(expected);
@@ -29,12 +27,11 @@ describe('Actions src/actions/obstaclesActions.js', () => {
   it('roverNewKeyboardMove', () => {
     const code = 'code';
     const grid = 'grid';
-    const obstaclesCoordinates = 'obstaclesCoordinates';
     const expected = {
       type: ROVER_NEW_MOVE,
-      payload: { code, grid, obstaclesCoordinates },
+      payload: { code, grid },
     };
-    const actual = roverNewKeyboardMove({ code, grid, obstaclesCoordinates });
+    const actual = roverNewKeyboardMove({ code, grid });
 
     expect(actual).toEqual(expected);
   });

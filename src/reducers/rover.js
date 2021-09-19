@@ -1,5 +1,5 @@
 import { ROVER_CLEAR, ROVER_NEW_INSTRUCTIONS, ROVER_NEW_MOVE, ROVER_SET_POSITION } from '../actions/actionTypes';
-import { KEYBOARDS_CODES, ROVER_DIRECTION, ROVER_MOVEMENT } from '../common/constants';
+import {  ROVER_DIRECTION, ROVER_MOVEMENT } from '../common/constants';
 import { getRoverMovementFromCode } from '../common/helpers';
 import { getNewRoverState } from './helpers/roverHelpers';
 
@@ -15,7 +15,7 @@ const rover = (state = defaultState, action) => {
       return defaultState;
 
     case ROVER_NEW_INSTRUCTIONS: {
-      const { instructions, grid, obstaclesCoordinates } = action.payload;
+      const { instructions, grid } = action.payload;
       const instructionsArray = [...instructions];
       let newState = { ...state };
 
@@ -28,7 +28,7 @@ const rover = (state = defaultState, action) => {
             current,
             direction,
             grid,
-            obstaclesCoordinates,
+            
             roverMovement,
             state: newState,
           });
@@ -38,17 +38,13 @@ const rover = (state = defaultState, action) => {
     }
 
     case ROVER_NEW_MOVE: {
-      const { code, grid, obstaclesCoordinates } = action.payload;
+      const { code, grid } = action.payload;
       const roverMovement = getRoverMovementFromCode(code);
       const { current, direction } = state;
       return getNewRoverState({
         current,
         direction,
         grid,
-        obstaclesCoordinates:
-          code === KEYBOARDS_CODES.W
-            ? obstaclesCoordinates
-            : obstaclesCoordinates,
         roverMovement,
         state,
       });

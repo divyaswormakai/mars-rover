@@ -4,14 +4,13 @@ import styled from 'styled-components';
 
 import { roverNewInstructionsMove } from '../actions/roverActions';
 import { getValidInstructions } from '../common/helpers';
-import { getGrid, getObstacles } from '../reducers';
+import { getGrid } from '../reducers';
 import Input from './library/Input';
 
 const InstructionsForm = ({
   className,
   roverNewInstructionsMove,
   grid,
-  obstaclesCoordinates,
 }) => {
   const inputRef = useRef(null);
   const handleFormSubmit = useCallback(
@@ -24,11 +23,10 @@ const InstructionsForm = ({
       roverNewInstructionsMove({
         grid,
         instructions,
-        obstaclesCoordinates,
       });
       inputRef.current.value = '';
     },
-    [grid, obstaclesCoordinates, roverNewInstructionsMove]
+    [grid,  roverNewInstructionsMove]
   );
 
   return (
@@ -97,7 +95,6 @@ const StyledInstructionsForm = styled(InstructionsForm)`
 
 const mapStateToProps = state => ({
   grid: getGrid(state),
-  obstaclesCoordinates: getObstacles(state),
 });
 
 export default connect(mapStateToProps, {

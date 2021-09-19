@@ -1,30 +1,29 @@
 import { ROVER_DIRECTION, ROVER_MOVEMENT } from '../../common/constants';
 import { isCorrectMovement } from '../../common/helpers';
 
-const getObstacleFound = ({ x, y }) => `Obstacle - X${x}, Y${y}`;
+ 
 
 const getStateCheckingMovement = ({
   grid,
-  obstaclesCoordinates,
   newDirection,
   newPosition,
   state,
 }) => {
-  if (isCorrectMovement({ grid, obstaclesCoordinates, newPosition })) {
+    if (isCorrectMovement({ grid, newPosition })) {
     return {
       current: newPosition,
       direction: newDirection,
       log: [state.current, ...state.log],
     };
   }
-  return { ...state, log: [getObstacleFound(newPosition), ...state.log] };
+  return { ...state, log: ['Outside boundary', ...state.log] };
+  
 };
 
 export const getNewRoverState = ({
   current,
   direction,
   grid,
-  obstaclesCoordinates,
   roverMovement,
   state,
 }) => {
@@ -105,7 +104,6 @@ export const getNewRoverState = ({
   }
   return getStateCheckingMovement({
     grid,
-    obstaclesCoordinates,
     newDirection: newDirection ?? direction,
     newPosition,
     state,

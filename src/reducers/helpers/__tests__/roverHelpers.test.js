@@ -12,7 +12,6 @@ describe('roverHelpers tests ', () => {
     const defaultOptions = {
       current: defaultCurrent,
       grid: { x: 10, y: 10 },
-      obstaclesCoordinates: [],
     };
 
     describe('ROVER_MOVEMENT.F', () => {

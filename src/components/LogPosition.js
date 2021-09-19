@@ -34,7 +34,6 @@ const LogPosition = ({ className, rover: { current, direction, log } }) => {
             {log.map((position, i) => (
               <p
                 key={i}
-                className={typeof position === 'string' && 'obstacle-text'}
               >
                 {getLogText(position)}
               </p>
@@ -78,9 +77,7 @@ const StyledLogPosition = styled(LogPosition)`
     overflow: auto;
   }
 
-  .obstacle-text {
-    color: #fd335a;
-  }
+  
 `;
 
 const mapStateToProps = state => ({

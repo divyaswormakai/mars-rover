@@ -1,5 +1,3 @@
-export const INITIAL_OBSTACLES = 15;
-
 export const KEYBOARDS_CODES = {
   A: 'KeyA',
   D: 'KeyD',

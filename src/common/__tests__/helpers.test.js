@@ -42,55 +42,19 @@ describe('helpers', () => {
     });
   });
 
- 
-
-  describe('getRandomCoordinates', () => {
-    it('should return obstacles coordinates', () => {
-      const newObstaclesCoordinates = getRandomCoordinates(grid);
-      const expectedCoordinates = [{ x: 0, y: 0 }];
-
-      expect(newObstaclesCoordinates).toEqual(expectedCoordinates);
-    });
-
-    it('should return obstacles doing one more loop', () => {
-      jest.spyOn(global.Math, 'floor').mockReturnValueOnce(2);
-      jest.spyOn(global.Math, 'floor').mockReturnValueOnce(2);
-      jest.spyOn(global.Math, 'floor').mockReturnValueOnce(2);
-      jest.spyOn(global.Math, 'floor').mockReturnValueOnce(2);
-      const newObstaclesCoordinates = getRandomCoordinates(grid, 2);
-      const expectedCoordinates = [
-        { x: 2, y: 2 },
-        { x: 0, y: 0 },
-      ];
-
-      expect(newObstaclesCoordinates).toEqual(expectedCoordinates);
-    });
-  });
 
   describe('getRandomRoverPosition', () => {
     it('should send a correct roverPosition', () => {
-      const obstaclesCoordinates = [];
       const randomRoverPosition = getRandomRoverPosition(
-        grid,
-        obstaclesCoordinates
+        grid
+    
       );
       const expectedPosition = { x: 0, y: 0 };
 
       expect(randomRoverPosition).toEqual(expectedPosition);
     });
 
-    it('should enter 2 times because the first one is obstacle', () => {
-      jest.spyOn(global.Math, 'floor').mockReturnValueOnce(1);
-      jest.spyOn(global.Math, 'floor').mockReturnValueOnce(1);
-      const obstaclesCoordinates = [{ x: 1, y: 1 }];
-      const randomRoverPosition = getRandomRoverPosition(
-        grid,
-        obstaclesCoordinates
-      );
-      const expectedPosition = { x: 0, y: 0 };
-
-      expect(randomRoverPosition).toEqual(expectedPosition);
-    });
+    
   });
 
   describe('getRoverMovementFromCode', () => {

@@ -5,16 +5,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 
-import { createObstacles } from '../../actions/obstaclesActions';
 import { roverClear, roverNewKeyboardMove, roverSetPosition } from '../../actions/roverActions';
 import { KEYBOARDS_CODES } from '../../common/constants';
 import { mockComponent } from '../../common/testHelpers';
-import { getGrid, getObstacles } from '../../reducers';
+import { getGrid } from '../../reducers';
 import store from '../../store/__mocks__/mockStore';
 import Home from '../Home';
 
 jest.mock('../../actions/roverActions');
-jest.mock('../../actions/obstaclesActions');
 jest.mock('../../reducers/index');
 
 jest.mock('../../components/Actions', () => props =>
@@ -33,7 +31,6 @@ const mockCoordinates = [
   { x: 3, y: 3 },
 ];
 const mockGrid = { x: 50, y: 75 };
-const mockObstaclesCoordinates = [{ x: 1, y: 1 }];
 const mockRoverPosition = { x: 5, y: 5 };
 
 jest.mock('../../common/helpers', () => ({
@@ -61,11 +58,8 @@ describe('Home test suite', () => {
     roverSetPosition.mockReturnValue({
       type: 'roverSetPosition',
     });
-    createObstacles.mockReturnValue({
-      type: 'createObstacles',
-    });
+   
     getGrid.mockReturnValue(mockGrid);
-    getObstacles.mockReturnValue(mockObstaclesCoordinates);
   });
 
   afterEach(jest.clearAllMocks);
@@ -81,13 +75,6 @@ describe('Home test suite', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('Should create obstacles and set rover position', () => {
-    setup();
-    expect(createObstacles).toHaveBeenCalledTimes(1);
-    expect(createObstacles).toHaveBeenCalledWith(mockCoordinates);
-    expect(roverSetPosition).toHaveBeenCalledTimes(1);
-    expect(roverSetPosition).toHaveBeenCalledWith(mockRoverPosition);
-  });
 
   it('Should fire new keyboardMove on press A', () => {
     const { getByLabelText } = setup();
@@ -96,7 +83,6 @@ describe('Home test suite', () => {
     expect(roverNewKeyboardMove).toHaveBeenCalledWith({
       code: KEYBOARDS_CODES.A,
       grid: mockGrid,
-      obstaclesCoordinates: mockObstaclesCoordinates,
     });
   });
 
@@ -107,7 +93,6 @@ describe('Home test suite', () => {
     expect(roverNewKeyboardMove).toHaveBeenCalledWith({
       code: KEYBOARDS_CODES.D,
       grid: mockGrid,
-      obstaclesCoordinates: mockObstaclesCoordinates,
     });
   });
 
@@ -118,7 +103,6 @@ describe('Home test suite', () => {
     expect(roverNewKeyboardMove).toHaveBeenCalledWith({
       code: KEYBOARDS_CODES.W,
       grid: mockGrid,
-      obstaclesCoordinates: mockObstaclesCoordinates,
     });
   });
 

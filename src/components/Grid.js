@@ -3,11 +3,10 @@ import { connect } from 'react-redux';
 import styled from 'styled-components';
 
 import { getDirectionArrow } from '../common/helpers';
-import { getGrid, getObstacles, getRover } from '../reducers';
+import { getGrid, getRover } from '../reducers';
 
 const Grid = ({
   className,
-  obstacles,
   grid: { x, y },
   rover: { current, direction },
 }) => {
@@ -16,7 +15,6 @@ const Grid = ({
     const columns = x;
     const rows = y;
     let iRows = 0;
-    const obstaclesAvailable = [...obstacles];
     for (iRows; iRows <= rows; iRows++) {
       let iColumns = 0;
       const rowItems = [];
@@ -25,28 +23,18 @@ const Grid = ({
         const xCoordinate = iColumns;
         const yCoordinate = rows - iRows;
         const id = `${xCoordinate}-${yCoordinate}`;
-        let isObstacle = false;
         let isRoverPosition = false;
 
         if (xCoordinate === current?.x && yCoordinate === current?.y) {
           isRoverPosition = true;
-        } else if (obstaclesAvailable.length) {
-          const obstacleIndex = obstaclesAvailable.findIndex(
-            obstacle => obstacle.x === xCoordinate && obstacle.y === yCoordinate
-          );
-          if (obstacleIndex !== -1) {
-            isObstacle = true;
-            obstaclesAvailable.splice(obstacleIndex, 1);
-          }
-        }
+        } 
 
         rowItems.push(
           <div
             className={`grid-square ${
               isRoverPosition
                 ? 'grid-square-rover'
-                : isObstacle
-                ? 'grid-square-obstacle'
+                
                 : ''
             }`}
             id={id}
@@ -94,9 +82,7 @@ const StyledGrid = styled(Grid)`
       &:first-child {
         border-left: 1px solid #24292e;
       }
-      &-obstacle {
-        background-color: #fd335a;
-      }
+      
 
       &-rover {
         background-color: #44b881;
@@ -143,7 +129,6 @@ const StyledGrid = styled(Grid)`
 `;
 
 const mapStateToProps = state => ({
-  obstacles: getObstacles(state),
   grid: getGrid(state),
   rover: getRover(state),
 });

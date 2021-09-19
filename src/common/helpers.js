@@ -8,11 +8,6 @@ const isCoordinateInsideGrid = (grid, newPosition) =>
   newPosition.y >= 0 &&
   newPosition.y <= grid.y;
 
-const isObstacleCoordinates = (obstaclesCoordinates, newPosition) =>
-  obstaclesCoordinates.findIndex(
-    obstacle => obstacle.x === newPosition.x && obstacle.y === newPosition.y
-  ) !== -1;
-
 export const getDirectionArrow = direction => {
   switch (direction) {
     case ROVER_DIRECTION.W:
@@ -30,39 +25,27 @@ export const getDirectionArrow = direction => {
   }
 };
 
-export const getRandomCoordinates = ({ x, y }, numberOfObstacles = 1) => {
+export const getRandomCoordinates = ({ x, y }) => {
   const coordinates = [];
-  let i = 0;
 
-  for (i; i < numberOfObstacles; i++) {
     const newX = Math.floor(Math.random() * (x - 0));
     const newY = Math.floor(Math.random() * (y - 0));
-    const existingObstacle = coordinates.findIndex(
-      obstacle => obstacle.x === newX && obstacle.y === newY
-    );
-
-    if (existingObstacle === -1) {
+   
       coordinates.push({
         x: newX,
         y: newY,
       });
-    } else {
-      numberOfObstacles = numberOfObstacles + 1;
-    }
-  }
+    
 
   return [...new Set(coordinates)];
 };
 
-export const getRandomRoverPosition = (grid, obstaclesCoordinates) => {
+export const getRandomRoverPosition = (grid) => {
   const roverPosition = getRandomCoordinates(grid)[0];
-  const isObstacle = isObstacleCoordinates(obstaclesCoordinates, roverPosition);
 
-  if (isObstacle) {
-    return getRandomRoverPosition(grid, obstaclesCoordinates);
-  }
+  return roverPosition
+  
 
-  return roverPosition;
 };
 
 export const getRoverMovementFromCode = code => {
@@ -86,12 +69,9 @@ export const getValidInstructions = instruction =>
     .join('') ?? '';
 
 export const isCorrectMovement = ({
-  obstaclesCoordinates,
   newPosition,
   grid,
 }) => {
-  const isObstacle = isObstacleCoordinates(obstaclesCoordinates, newPosition);
   const isInsideGrid = isCoordinateInsideGrid(grid, newPosition);
-
-  return !isObstacle && isInsideGrid;
+  return  isInsideGrid;
 };

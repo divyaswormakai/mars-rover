@@ -25,10 +25,6 @@ exports[`Grid test suite Should match snapshot 1`] = `
   border-left: 1px solid #24292e;
 }
 
-.c0 .grid-rows .grid-square-obstacle {
-  background-color: #fd335a;
-}
-
 .c0 .grid-rows .grid-square-rover {
   background-color: #44b881;
 }
@@ -130,7 +126,7 @@ exports[`Grid test suite Should match snapshot 1`] = `
         id="0-4"
       />
       <div
-        class="grid-square grid-square-obstacle"
+        class="grid-square "
         id="1-4"
       />
       <div
@@ -142,7 +138,7 @@ exports[`Grid test suite Should match snapshot 1`] = `
         id="3-4"
       />
       <div
-        class="grid-square grid-square-obstacle"
+        class="grid-square "
         id="4-4"
       />
       <div
@@ -174,7 +170,7 @@ exports[`Grid test suite Should match snapshot 1`] = `
       class="grid-rows"
     >
       <div
-        class="grid-square grid-square-obstacle"
+        class="grid-square "
         id="0-3"
       />
       <div
@@ -186,7 +182,7 @@ exports[`Grid test suite Should match snapshot 1`] = `
         id="2-3"
       />
       <div
-        class="grid-square grid-square-obstacle"
+        class="grid-square "
         id="3-3"
       />
       <div
@@ -284,7 +280,7 @@ exports[`Grid test suite Should match snapshot 1`] = `
         id="1-1"
       />
       <div
-        class="grid-square grid-square-obstacle"
+        class="grid-square "
         id="2-1"
       />
       <div

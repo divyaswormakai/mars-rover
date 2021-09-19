@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>22/22</span>
+                <span class='fraction'>20/20</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>20/20</span>
+                <span class='fraction'>18/18</span>
             </div>
         
             
@@ -160,15 +160,7 @@
 <a name='L101'></a><a href='#L101'>101</a>
 <a name='L102'></a><a href='#L102'>102</a>
 <a name='L103'></a><a href='#L103'>103</a>
-<a name='L104'></a><a href='#L104'>104</a>
-<a name='L105'></a><a href='#L105'>105</a>
-<a name='L106'></a><a href='#L106'>106</a>
-<a name='L107'></a><a href='#L107'>107</a>
-<a name='L108'></a><a href='#L108'>108</a>
-<a name='L109'></a><a href='#L109'>109</a>
-<a name='L110'></a><a href='#L110'>110</a>
-<a name='L111'></a><a href='#L111'>111</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L104'></a><a href='#L104'>104</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -188,17 +180,13 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -209,17 +197,17 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -266,9 +254,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -281,31 +267,26 @@
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 &nbsp;
-import { createObstacles } from '../actions/obstaclesActions';
 import { roverClear, roverNewKeyboardMove, roverSetPosition } from '../actions/roverActions';
-import { INITIAL_OBSTACLES, KEYBOARDS_CODES } from '../common/constants';
-import { getRandomCoordinates, getRandomRoverPosition } from '../common/helpers';
+import {  KEYBOARDS_CODES } from '../common/constants';
+import {  getRandomRoverPosition } from '../common/helpers';
 import Actions from '../components/Actions';
 import Grid from '../components/Grid';
 import LogPosition from '../components/LogPosition';
 import Title from '../components/Title';
-import { getGrid, getObstacles } from '../reducers';
+import { getGrid } from '../reducers';
 &nbsp;
 const Home = ({
   className,
-  createObstacles,
   grid,
-  obstaclesCoordinates,
   roverClear,
   roverNewKeyboardMove,
   roverSetPosition,
 }) =&gt; {
   useEffect(() =&gt; {
-    const obstaclesCoordinates = getRandomCoordinates(grid, INITIAL_OBSTACLES);
-    const roverPosition = getRandomRoverPosition(grid, obstaclesCoordinates);
-    createObstacles(obstaclesCoordinates);
+    const roverPosition = getRandomRoverPosition(grid);
     roverSetPosition(roverPosition);
-  }, [createObstacles, grid, roverSetPosition]);
+  }, [ grid, roverSetPosition]);
 &nbsp;
   useEffect(() =&gt; {
     const eventListener = event =&gt; {
@@ -314,14 +295,14 @@ const Home = ({
         case KEYBOARDS_CODES.A:
         case KEYBOARDS_CODES.D:
         case KEYBOARDS_CODES.W:
-          return roverNewKeyboardMove({ code, grid, obstaclesCoordinates });
+          return roverNewKeyboardMove({ code, grid });
         default:
           return null;
       }
     };
     document.addEventListener('keydown', eventListener);
     return () =&gt; document.removeEventListener('keydown', eventListener);
-  }, [grid, obstaclesCoordinates, roverNewKeyboardMove]);
+  }, [grid,  roverNewKeyboardMove]);
 &nbsp;
   useEffect(() =&gt; {
     return () =&gt; {
@@ -378,11 +359,9 @@ const StyledHome = styled(Home)`
 &nbsp;
 const mapStateToProps = state =&gt; ({
   grid: getGrid(state),
-  obstaclesCoordinates: getObstacles(state),
 });
 &nbsp;
 export default connect(mapStateToProps, {
-  createObstacles,
   roverClear,
   roverNewKeyboardMove,
   roverSetPosition,
@@ -394,7 +373,7 @@ export default connect(mapStateToProps, {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Sun Sep 19 2021 14:04:25 GMT+0545 (Nepal Time)
+                at Sun Sep 19 2021 17:00:31 GMT+0545 (Nepal Time)
             </div>
         </div>
         <script src="../prettify.js"></script>

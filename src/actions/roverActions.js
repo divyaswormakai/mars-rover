@@ -7,22 +7,19 @@ export const roverClear = () => ({
 export const roverNewInstructionsMove = ({
   instructions,
   grid,
-  obstaclesCoordinates,
 }) => ({
   type: ROVER_NEW_INSTRUCTIONS,
   payload: {
     instructions,
     grid,
-    obstaclesCoordinates,
   },
 });
 
-export const roverNewKeyboardMove = ({ code, grid, obstaclesCoordinates }) => ({
+export const roverNewKeyboardMove = ({ code, grid }) => ({
   type: ROVER_NEW_MOVE,
   payload: {
     code,
     grid,
-    obstaclesCoordinates,
   },
 });
 

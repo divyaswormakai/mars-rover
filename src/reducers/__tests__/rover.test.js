@@ -43,12 +43,11 @@ describe('Reducer src/reducers/rover.js: ', () => {
       it('should move 3 times', () => {
         const instructions = 'FfF';
         const grid = { x: 50, y: 25 };
-        const obstaclesCoordinates = [];
         const position = { x: 0, y: 0 };
         const expectedPosition = { x: 0, y: 3 };
         const action = {
           type: ROVER_NEW_INSTRUCTIONS,
-          payload: { instructions, grid, obstaclesCoordinates },
+          payload: { instructions, grid },
         };
         const initialState = { ...defaultState, current: position };
         const expectedState = {
@@ -60,34 +59,13 @@ describe('Reducer src/reducers/rover.js: ', () => {
         expect(reducer(initialState, action)).toEqual(expectedState);
       });
 
-      it('should move only one time cause an obstacle', () => {
-        const instructions = 'FfF';
-        const grid = { x: 50, y: 25 };
-        const obstaclesCoordinates = [{ x: 0, y: 2 }];
-        const position = { x: 0, y: 0 };
-        const expectedPosition = { x: 0, y: 1 };
-        const action = {
-          type: ROVER_NEW_INSTRUCTIONS,
-          payload: { instructions, grid, obstaclesCoordinates },
-        };
-        const initialState = { ...defaultState, current: position };
-        const expectedState = {
-          ...defaultState,
-          current: expectedPosition,
-          log: ['Obstacle - X0, Y2', 'Obstacle - X0, Y2', position],
-        };
-
-        expect(reducer(initialState, action)).toEqual(expectedState);
-      });
-
       it('should stay on the same position because instructions are wrong', () => {
         const instructions = 'abc';
         const grid = { x: 50, y: 25 };
-        const obstaclesCoordinates = [{ x: 0, y: 2 }];
         const position = { x: 0, y: 0 };
         const action = {
           type: ROVER_NEW_INSTRUCTIONS,
-          payload: { instructions, grid, obstaclesCoordinates },
+          payload: { instructions, grid },
         };
         const initialState = { ...defaultState, current: position };
 
@@ -99,12 +77,11 @@ describe('Reducer src/reducers/rover.js: ', () => {
       it('should send new position', () => {
         const code = KEYBOARDS_CODES.W;
         const grid = { x: 50, y: 25 };
-        const obstaclesCoordinates = [];
         const position = { x: 0, y: 0 };
         const expectedPosition = { x: 0, y: 1 };
         const action = {
           type: ROVER_NEW_MOVE,
-          payload: { code, grid, obstaclesCoordinates },
+          payload: { code, grid },
         };
         const initialState = { ...defaultState, current: position };
         const expectedState = {
@@ -116,23 +93,7 @@ describe('Reducer src/reducers/rover.js: ', () => {
         expect(reducer(initialState, action)).toEqual(expectedState);
       });
 
-      it('should stay on the same position cause of an obstacle', () => {
-        const code = KEYBOARDS_CODES.W;
-        const grid = { x: 50, y: 25 };
-        const obstaclesCoordinates = [{ x: 0, y: 1 }];
-        const position = { x: 0, y: 0 };
-        const action = {
-          type: ROVER_NEW_MOVE,
-          payload: { code, grid, obstaclesCoordinates },
-        };
-        const initialState = { ...defaultState, current: position };
-        const expectedState = {
-          ...initialState,
-          log: ['Obstacle - X0, Y1'],
-        };
-
-        expect(reducer(initialState, action)).toEqual(expectedState);
-      });
+     
     });
 
     describe('ROVER_SET_POSITION', () => {

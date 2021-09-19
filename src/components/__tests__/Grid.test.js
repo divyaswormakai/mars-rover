@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import { fireEvent, render } from '@testing-library/react';
 import 'jest-styled-components';
 
-import { getGrid, getObstacles, getRover } from '../../reducers';
+import { getGrid, getRover } from '../../reducers';
 
 import Grid from '../Grid';
 
@@ -24,7 +24,6 @@ describe('Grid test suite', () => {
 
   beforeEach(() => {
     getGrid.mockReturnValue(state.grid);
-    getObstacles.mockReturnValue(state.obstacles);
     getRover.mockReturnValue(state.rover);
   });
 

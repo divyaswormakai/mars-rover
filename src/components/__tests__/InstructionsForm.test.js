@@ -6,7 +6,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 
 import { roverNewInstructionsMove } from '../../actions/roverActions';
-import { getGrid, getObstacles } from '../../reducers';
+import { getGrid } from '../../reducers';
 import state from '../../store/__mocks__/mockState';
 import store from '../../store/__mocks__/mockStore';
 import InstructionsForm from '../InstructionsForm';
@@ -28,7 +28,6 @@ describe('InstructionsForm test suite', () => {
       type: 'roverNewInstructionsMove',
     });
     getGrid.mockReturnValue(state.grid);
-    getObstacles.mockReturnValue(state.obstacles);
   });
 
   afterEach(jest.clearAllMocks);
