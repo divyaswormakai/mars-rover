@@ -34,6 +34,18 @@ exports[`LogPosition test suite Should match snapshot 1`] = `
   overflow: auto;
 }
 
+.c0 .clear-log {
+  border: none;
+  background-color: #fd335a;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.c0 .clear-log:hover {
+  cursor: pointer;
+}
+
 <div>
   <div
     class="c0"
@@ -60,6 +72,11 @@ exports[`LogPosition test suite Should match snapshot 1`] = `
         EAST
       </b>
     </p>
+    <button
+      class="clear-log"
+    >
+      Clear Log
+    </button>
     <h5
       class="title"
     >

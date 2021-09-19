@@ -67,7 +67,7 @@ exports[`InstructionsForm test suite Should match snapshot 1`] = `
     >
       <p>
         <b>
-          F:
+          f:
         </b>
         <i>
            Move Forward
@@ -75,7 +75,7 @@ exports[`InstructionsForm test suite Should match snapshot 1`] = `
       </p>
       <p>
         <b>
-          R:
+          r:
         </b>
         <i>
            Turn Right
@@ -83,7 +83,7 @@ exports[`InstructionsForm test suite Should match snapshot 1`] = `
       </p>
       <p>
         <b>
-          L:
+          l:
         </b>
         <i>
            Turn Left

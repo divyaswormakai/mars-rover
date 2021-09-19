@@ -3,8 +3,8 @@
 exports[`Reducer src/reducers/index.js Default 1`] = `
 Object {
   "grid": Object {
-    "x": 10,
-    "y": 10,
+    "x": 9,
+    "y": 9,
   },
   "rover": Object {
     "current": null,

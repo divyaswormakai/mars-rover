@@ -25,27 +25,21 @@ export const getDirectionArrow = direction => {
   }
 };
 
-export const getRandomCoordinates = ({ x, y }) => {
+export const getRandomCoordinates = () => {
   const coordinates = [];
 
-    const newX = Math.floor(Math.random() * (x - 0));
-    const newY = Math.floor(Math.random() * (y - 0));
-   
-      coordinates.push({
-        x: newX,
-        y: newY,
-      });
-    
+  coordinates.push({
+    x: 0,
+    y: 0,
+  });
 
   return [...new Set(coordinates)];
 };
 
-export const getRandomRoverPosition = (grid) => {
+export const getRandomRoverPosition = grid => {
   const roverPosition = getRandomCoordinates(grid)[0];
 
-  return roverPosition
-  
-
+  return roverPosition;
 };
 
 export const getRoverMovementFromCode = code => {
@@ -68,10 +62,7 @@ export const getValidInstructions = instruction =>
     .filter(item => Object.keys(ROVER_MOVEMENT).includes(item))
     .join('') ?? '';
 
-export const isCorrectMovement = ({
-  newPosition,
-  grid,
-}) => {
+export const isCorrectMovement = ({ newPosition, grid }) => {
   const isInsideGrid = isCoordinateInsideGrid(grid, newPosition);
-  return  isInsideGrid;
+  return isInsideGrid;
 };

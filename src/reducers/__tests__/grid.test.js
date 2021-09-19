@@ -2,7 +2,7 @@ import { ROVER_CLEAR } from '../../actions/actionTypes';
 import reducer from '../grid';
 
 describe('Reducer src/reducers/grid.js: ', () => {
-  const defaultState = { x: 10, y: 10 };
+  const defaultState = { x: 9, y: 9 };
 
   it('Default', () => {
     const action = {};

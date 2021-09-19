@@ -7,11 +7,7 @@ import { getValidInstructions } from '../common/helpers';
 import { getGrid } from '../reducers';
 import Input from './library/Input';
 
-const InstructionsForm = ({
-  className,
-  roverNewInstructionsMove,
-  grid,
-}) => {
+const InstructionsForm = ({ className, roverNewInstructionsMove, grid }) => {
   const inputRef = useRef(null);
   const handleFormSubmit = useCallback(
     event => {
@@ -26,7 +22,7 @@ const InstructionsForm = ({
       });
       inputRef.current.value = '';
     },
-    [grid,  roverNewInstructionsMove]
+    [grid, roverNewInstructionsMove]
   );
 
   return (
@@ -47,17 +43,18 @@ const InstructionsForm = ({
         <Input type="reset" value="Reset" className="instructions-reset" />
         <Input className="instructions-send" type="submit" value="Send" />
       </p>
+
       <div className="instructions">
         <p>
-          <b>F:</b>
+          <b>f:</b>
           <i> Move Forward</i>
         </p>
         <p>
-          <b>R:</b>
+          <b>r:</b>
           <i> Turn Right</i>
         </p>
         <p>
-          <b>L:</b>
+          <b>l:</b>
           <i> Turn Left</i>
         </p>
       </div>

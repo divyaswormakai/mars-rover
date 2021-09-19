@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">97.67% </span>
+                <span class="strong">97.87% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>42/43</span>
+                <span class='fraction'>46/47</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">95.65% </span>
+                <span class="strong">95.24% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>22/23</span>
+                <span class='fraction'>20/21</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">97.67% </span>
+                <span class="strong">97.87% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>42/43</span>
+                <span class='fraction'>46/47</span>
             </div>
         
             
@@ -168,8 +168,10 @@
 <a name='L109'></a><a href='#L109'>109</a>
 <a name='L110'></a><a href='#L110'>110</a>
 <a name='L111'></a><a href='#L111'>111</a>
-<a name='L112'></a><a href='#L112'>112</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L112'></a><a href='#L112'>112</a>
+<a name='L113'></a><a href='#L113'>113</a>
+<a name='L114'></a><a href='#L114'>114</a>
+<a name='L115'></a><a href='#L115'>115</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -205,16 +207,20 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -282,15 +288,14 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { ROVER_DIRECTION, ROVER_MOVEMENT } from '../../common/constants';
 import { isCorrectMovement } from '../../common/helpers';
 &nbsp;
- 
-&nbsp;
+// Return the state of the move based on the correctness of the movement
 const getStateCheckingMovement = ({
   grid,
   newDirection,
   newPosition,
   state,
 }) =&gt; {
-    <span class="missing-if-branch" title="else path not taken" >E</span>if (isCorrectMovement({ grid, newPosition })) {
+  <span class="missing-if-branch" title="else path not taken" >E</span>if (isCorrectMovement({ grid, newPosition })) {
     return {
       current: newPosition,
       direction: newDirection,
@@ -298,9 +303,9 @@ const getStateCheckingMovement = ({
     };
   }
 <span class="cstat-no" title="statement not covered" >  return { ...state, log: ['Outside boundary', ...state.log] };</span>
-  
 };
 &nbsp;
+// Return the new rover state based on the keyboard input or
 export const getNewRoverState = ({
   current,
   direction,
@@ -315,18 +320,22 @@ export const getNewRoverState = ({
       switch (direction) {
         case ROVER_DIRECTION.N: {
           newPosition.y = newPosition.y + 1;
+          newDirection = ROVER_DIRECTION.N;
           break;
         }
         case ROVER_DIRECTION.S: {
           newPosition.y = newPosition.y - 1;
+          newDirection = ROVER_DIRECTION.S;
           break;
         }
         case ROVER_DIRECTION.W: {
           newPosition.x = newPosition.x - 1;
+          newDirection = ROVER_DIRECTION.W;
           break;
         }
         case ROVER_DIRECTION.E: {
           newPosition.x = newPosition.x + 1;
+          newDirection = ROVER_DIRECTION.E;
           break;
         }
         default:
@@ -385,7 +394,7 @@ export const getNewRoverState = ({
   }
   return getStateCheckingMovement({
     grid,
-    newDirection: newDirection ?? direction,
+    newDirection,
     newPosition,
     state,
   });
@@ -397,7 +406,7 @@ export const getNewRoverState = ({
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Sun Sep 19 2021 17:00:31 GMT+0545 (Nepal Time)
+                at Mon Sep 20 2021 01:04:20 GMT+0545 (Nepal Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>

@@ -1,15 +1,14 @@
 import { ROVER_DIRECTION, ROVER_MOVEMENT } from '../../common/constants';
 import { isCorrectMovement } from '../../common/helpers';
 
- 
-
+// Return the state of the move based on the correctness of the movement
 const getStateCheckingMovement = ({
   grid,
   newDirection,
   newPosition,
   state,
 }) => {
-    if (isCorrectMovement({ grid, newPosition })) {
+  if (isCorrectMovement({ grid, newPosition })) {
     return {
       current: newPosition,
       direction: newDirection,
@@ -17,9 +16,9 @@ const getStateCheckingMovement = ({
     };
   }
   return { ...state, log: ['Outside boundary', ...state.log] };
-  
 };
 
+// Return the new rover state based on the keyboard input or
 export const getNewRoverState = ({
   current,
   direction,
@@ -34,18 +33,22 @@ export const getNewRoverState = ({
       switch (direction) {
         case ROVER_DIRECTION.N: {
           newPosition.y = newPosition.y + 1;
+          newDirection = ROVER_DIRECTION.N;
           break;
         }
         case ROVER_DIRECTION.S: {
           newPosition.y = newPosition.y - 1;
+          newDirection = ROVER_DIRECTION.S;
           break;
         }
         case ROVER_DIRECTION.W: {
           newPosition.x = newPosition.x - 1;
+          newDirection = ROVER_DIRECTION.W;
           break;
         }
         case ROVER_DIRECTION.E: {
           newPosition.x = newPosition.x + 1;
+          newDirection = ROVER_DIRECTION.E;
           break;
         }
         default:
@@ -104,7 +107,7 @@ export const getNewRoverState = ({
   }
   return getStateCheckingMovement({
     grid,
-    newDirection: newDirection ?? direction,
+    newDirection,
     newPosition,
     state,
   });

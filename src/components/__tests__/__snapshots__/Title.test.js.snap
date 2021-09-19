@@ -6,10 +6,15 @@ exports[`Title test suite Should match snapshot 1`] = `
 }
 
 <div>
-  <h1
-    class="c0"
-  >
-    Mars Rover Mission
-  </h1>
+  <div>
+    <h1
+      class="c0"
+    >
+      Mars Rover Mission
+    </h1>
+    <h4>
+      10 * 10 in UI
+    </h4>
+  </div>
 </div>
 `;

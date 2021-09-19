@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 
+import { roverClearPositionLog } from '../actions/roverActions';
 import { getRover } from '../reducers';
 
 const getLogText = position => {
@@ -11,7 +12,14 @@ const getLogText = position => {
   return `X${position.x}, Y${position.y}`;
 };
 
-const LogPosition = ({ className, rover: { current, direction, log } }) => {
+const LogPosition = ({
+  className,
+  rover: { current, direction, log },
+  roverClearPositionLog,
+}) => {
+  const handleClearLog = useCallback(roverClearPositionLog, [
+    roverClearPositionLog,
+  ]);
   return (
     <div className={className}>
       {current && (
@@ -27,16 +35,16 @@ const LogPosition = ({ className, rover: { current, direction, log } }) => {
         <br />
         <b>{direction.toUpperCase()}</b>
       </p>
+      <button onClick={handleClearLog} className="clear-log">
+        Clear Log
+      </button>
+
       {!!log.length && (
         <>
           <h5 className="title">Last positions: </h5>
           <div className="positions-container">
             {log.map((position, i) => (
-              <p
-                key={i}
-              >
-                {getLogText(position)}
-              </p>
+              <p key={i}>{getLogText(position)}</p>
             ))}
           </div>
         </>
@@ -77,11 +85,22 @@ const StyledLogPosition = styled(LogPosition)`
     overflow: auto;
   }
 
-  
+  .clear-log {
+    border: none;
+    background-color: #fd335a;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+  }
+  .clear-log:hover {
+    cursor: pointer;
+  }
 `;
 
 const mapStateToProps = state => ({
   rover: getRover(state),
 });
 
-export default connect(mapStateToProps)(StyledLogPosition);
+export default connect(mapStateToProps, { roverClearPositionLog })(
+  StyledLogPosition
+);
