@@ -1,18 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`LogPosition test suite Should match snapshot 1`] = `
-.c1 {
-  cursor: pointer;
-}
-
 .c0 {
   display: inline-block;
   height: 376px;
   overflow: hidden;
   border: 1px solid black;
-  margin-left: 30px;
-  padding: 20px 20px;
-  width: 200px;
+  padding: 10px;
+  min-width: 225px;
+  border-radius: 10px;
 }
 
 .c0 .current {
@@ -38,6 +34,10 @@ exports[`LogPosition test suite Should match snapshot 1`] = `
   overflow: auto;
 }
 
+.c0 .obstacle-text {
+  color: #fd335a;
+}
+
 <div>
   <div
     class="c0"
@@ -48,26 +48,22 @@ exports[`LogPosition test suite Should match snapshot 1`] = `
       >
         Current position:
       </span>
-      <b>
-        X 
+      <strong>
+        X
         2
-        , Y 
+        , Y
         2
-      </b>
+      </strong>
     </div>
     <p
       class="direction"
     >
-      Current direction: 
+      Current direction:
+      <br />
       <b>
-        east
+        EAST
       </b>
     </p>
-    <button
-      class="c1"
-    >
-      Clear Log
-    </button>
     <h5
       class="title"
     >
@@ -76,7 +72,9 @@ exports[`LogPosition test suite Should match snapshot 1`] = `
     <div
       class="positions-container"
     >
-      <p>
+      <p
+        class="obstacle-text"
+      >
         Obstacle - X0, Y3
       </p>
       <p>

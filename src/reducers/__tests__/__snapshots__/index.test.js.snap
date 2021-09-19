@@ -55,7 +55,7 @@ Object {
   },
   "direction": "east",
   "log": Array [
-    "Obstacle - X 0, Y 3",
+    "Obstacle - X0, Y3",
     Object {
       "x": 0,
       "y": 1,

@@ -1,15 +1,14 @@
+import 'jest-styled-components';
+
+import { render } from '@testing-library/react';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { fireEvent, render } from '@testing-library/react';
-import 'jest-styled-components';
 
 import { getRover } from '../../reducers';
-
-import LogPosition from '../LogPosition';
-
-import store from '../../store/__mocks__/mockStore';
 import state from '../../store/__mocks__/mockState';
+import store from '../../store/__mocks__/mockStore';
+import LogPosition from '../LogPosition';
 
 jest.mock('../../actions/roverActions');
 jest.mock('../../reducers');
@@ -23,6 +22,9 @@ describe('LogPosition test suite', () => {
 
   const setup = () => render(component);
 
+  beforeEach(() => {
+    getRover.mockReturnValue(state.rover);
+  });
 
   afterEach(jest.clearAllMocks);
 
@@ -36,6 +38,4 @@ describe('LogPosition test suite', () => {
     const { container } = setup();
     expect(container).toMatchSnapshot();
   });
-
-
 });

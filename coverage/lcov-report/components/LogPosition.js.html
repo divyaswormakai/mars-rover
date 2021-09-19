@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>5/10</span>
+                <span class='fraction'>10/10</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/8</span>
+                <span class='fraction'>8/8</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">25% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/4</span>
+                <span class='fraction'>4/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">44.44% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>4/9</span>
+                <span class='fraction'>9/9</span>
             </div>
         
             
@@ -55,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -146,21 +146,22 @@
 <a name='L87'></a><a href='#L87'>87</a>
 <a name='L88'></a><a href='#L88'>88</a>
 <a name='L89'></a><a href='#L89'>89</a>
-<a name='L90'></a><a href='#L90'>90</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L90'></a><a href='#L90'>90</a>
+<a name='L91'></a><a href='#L91'>91</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -179,7 +180,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -241,15 +243,15 @@ import styled from 'styled-components';
 &nbsp;
 import { getRover } from '../reducers';
 &nbsp;
-const getLogText = <span class="fstat-no" title="function not covered" >po</span>sition =&gt; {
-<span class="cstat-no" title="statement not covered" >  if (typeof position === 'string') {</span>
-<span class="cstat-no" title="statement not covered" >    return position;</span>
+const getLogText = position =&gt; {
+  if (typeof position === 'string') {
+    return position;
   }
-<span class="cstat-no" title="statement not covered" >  return `X${position.x}, Y${position.y}`;</span>
+  return `X${position.x}, Y${position.y}`;
 };
 &nbsp;
-const LogPosition = <span class="fstat-no" title="function not covered" >({</span> className, rover: { current, direction, log } }) =&gt; {
-<span class="cstat-no" title="statement not covered" >  return (</span>
+const LogPosition = ({ className, rover: { current, direction, log } }) =&gt; {
+  return (
     &lt;div className={className}&gt;
       {current &amp;&amp; (
         &lt;div&gt;
@@ -261,14 +263,15 @@ const LogPosition = <span class="fstat-no" title="function not covered" >({</spa
       )}
       &lt;p className="direction"&gt;
         Current direction:
-        &lt;br /&gt; &lt;b&gt;{direction.toUpperCase()}&lt;/b&gt;
+        &lt;br /&gt;
+        &lt;b&gt;{direction.toUpperCase()}&lt;/b&gt;
       &lt;/p&gt;
       {!!log.length &amp;&amp; (
         &lt;&gt;
           &lt;h5 className="title"&gt;Last positions: &lt;/h5&gt;
           &lt;div className="positions-container"&gt;
-            {log.map(<span class="fstat-no" title="function not covered" >(p</span>osition, i) =&gt; (
-<span class="cstat-no" title="statement not covered" >              &lt;p</span>
+            {log.map((position, i) =&gt; (
+              &lt;p
                 key={i}
                 className={typeof position === 'string' &amp;&amp; 'obstacle-text'}
               &gt;
@@ -331,7 +334,7 @@ export default connect(mapStateToProps)(StyledLogPosition);
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Sun Sep 19 2021 01:34:51 GMT+0545 (Nepal Time)
+                at Sun Sep 19 2021 14:04:25 GMT+0545 (Nepal Time)
             </div>
         </div>
         <script src="../prettify.js"></script>

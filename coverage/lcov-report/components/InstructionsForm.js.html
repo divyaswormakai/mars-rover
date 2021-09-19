@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/13</span>
+                <span class='fraction'>13/13</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/3</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/12</span>
+                <span class='fraction'>12/12</span>
             </div>
         
             
@@ -55,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -171,31 +171,31 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -231,7 +231,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -259,7 +259,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -276,31 +276,31 @@ import { getValidInstructions } from '../common/helpers';
 import { getGrid, getObstacles } from '../reducers';
 import Input from './library/Input';
 &nbsp;
-const InstructionsForm = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >({</span></span>
+const InstructionsForm = ({
   className,
   roverNewInstructionsMove,
   grid,
   obstaclesCoordinates,
 }) =&gt; {
-  const inputRef = <span class="cstat-no" title="statement not covered" >useRef(null);</span>
-  const handleFormSubmit = <span class="cstat-no" title="statement not covered" >useCallback(</span>
-<span class="fstat-no" title="function not covered" >    ev</span>ent =&gt; {
-<span class="cstat-no" title="statement not covered" >      event.preventDefault();</span>
-      const inputValue = <span class="cstat-no" title="statement not covered" >event?.target?.instructions?.value;</span>
-      const instructions = <span class="cstat-no" title="statement not covered" >getValidInstructions(inputValue);</span>
+  const inputRef = useRef(null);
+  const handleFormSubmit = useCallback(
+    event =&gt; {
+      event.preventDefault();
+      const inputValue = event?.target?.instructions?.value;
+      const instructions = getValidInstructions(inputValue);
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      inputRef.current.value = instructions;</span>
-<span class="cstat-no" title="statement not covered" >      roverNewInstructionsMove({</span>
+      inputRef.current.value = instructions;
+      roverNewInstructionsMove({
         grid,
         instructions,
         obstaclesCoordinates,
       });
-<span class="cstat-no" title="statement not covered" >      inputRef.current.value = '';</span>
+      inputRef.current.value = '';
     },
     [grid, obstaclesCoordinates, roverNewInstructionsMove]
   );
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return (</span>
+  return (
     &lt;form className={className} onSubmit={handleFormSubmit}&gt;
       &lt;div&gt;
         &lt;label className="label" htmlFor="instructions"&gt;
@@ -336,7 +336,7 @@ const InstructionsForm = <span class="cstat-no" title="statement not covered" ><
   );
 };
 &nbsp;
-const StyledInstructionsForm = <span class="cstat-no" title="statement not covered" >styled(InstructionsForm)`</span>
+const StyledInstructionsForm = styled(InstructionsForm)`
   .label {
     display: block;
     margin: 0 0 5px;
@@ -364,7 +364,7 @@ const StyledInstructionsForm = <span class="cstat-no" title="statement not cover
   }
 `;
 &nbsp;
-const mapStateToProps = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >st</span>ate =&gt; (<span class="cstat-no" title="statement not covered" >{</span></span>
+const mapStateToProps = state =&gt; ({
   grid: getGrid(state),
   obstaclesCoordinates: getObstacles(state),
 });
@@ -379,7 +379,7 @@ export default connect(mapStateToProps, {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Sun Sep 19 2021 01:34:51 GMT+0545 (Nepal Time)
+                at Sun Sep 19 2021 14:04:25 GMT+0545 (Nepal Time)
             </div>
         </div>
         <script src="../prettify.js"></script>

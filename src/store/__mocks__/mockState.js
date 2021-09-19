@@ -32,7 +32,7 @@ const state = {
     },
     direction: 'east',
     log: [
-      'Obstacle - X 0, Y 3',
+      'Obstacle - X0, Y3',
       {
         x: 0,
         y: 1,

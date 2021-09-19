@@ -24,7 +24,8 @@ const LogPosition = ({ className, rover: { current, direction, log } }) => {
       )}
       <p className="direction">
         Current direction:
-        <br /> <b>{direction.toUpperCase()}</b>
+        <br />
+        <b>{direction.toUpperCase()}</b>
       </p>
       {!!log.length && (
         <>
